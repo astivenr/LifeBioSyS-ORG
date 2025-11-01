@@ -1,0 +1,213 @@
+/* ==================== VARIABLES CONSCIENTES ==================== */
+:root {
+    /* Colores del ADN Cognitivo */
+    --primary: #667eea;
+    --secondary: #764ba2;
+    --accent: #00cec9;
+    --adenina: #2196f3;
+    --timina: #9c27b0;
+    --citosina: #0984e3;
+    --guanina: #00cec9;
+    --rna: #e17055;
+    
+    /* Neutrales */
+    --dark: #2d3436;
+    --light: #f8f9fa;
+    --text: #333;
+    
+    /* Espaciado fractal (escala áurea) */
+    --space-xs: 0.5rem;
+    --space-sm: 0.809rem;
+    --space-md: 1.309rem;
+    --space-lg: 2.118rem;
+    --space-xl: 3.427rem;
+}
+
+/* ==================== BASE ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.7;
+    color: var(--text);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: var(--space-md);
+}
+
+/* ==================== LAYOUT ==================== */
+header, main, footer {
+    max-width: 900px;
+    margin: 0 auto var(--space-lg);
+    background: white;
+    border-radius: 20px;
+    padding: var(--space-lg);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+/* ==================== HERO ==================== */
+.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: var(--space-sm);
+}
+
+.hero .subtitle {
+    font-size: 1.3em;
+    opacity: 0.9;
+    margin-bottom: var(--space-lg);
+}
+
+.hero nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.3s;
+}
+
+.hero nav a:hover {
+    opacity: 0.7;
+}
+
+/* ==================== COMPONENTES ==================== */
+.card {
+    background: var(--light);
+    padding: var(--space-lg);
+    border-radius: 10px;
+    margin: var(--space-md) 0;
+    border-left: 5px solid var(--primary);
+}
+
+.card.problema {
+    background: #fff3cd;
+    border-left-color: #ffc107;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 1.2em;
+    margin: var(--space-md) 0;
+    color: var(--dark);
+}
+
+/* ==================== DNA GRID ==================== */
+.dna-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+.base {
+    padding: var(--space-md);
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+}
+
+.base.rna { background: var(--rna); }
+.base.adenina { background: var(--adenina); }
+.base.timina { background: var(--timina); }
+.base.citosina { background: var(--citosina); }
+.base.guanina { background: var(--guanina); }
+
+/* ==================== PRINCIPIOS GRID ==================== */
+.principios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-lg) 0;
+}
+
+.principio {
+    background: var(--light);
+    padding: var(--space-md);
+    border-radius: 10px;
+    border-left: 4px solid var(--accent);
+}
+
+/* ==================== BOTONES ==================== */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    margin: var(--space-sm);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 1.8em; }
+    .dna-grid, .principios-grid { grid-template-columns: 1fr; }
+}
+```
+
+---
+
+### **3. `manifiesto-completo.html` - Tu documento actual**
+
+Este sería tu `manifiesto claude2.html` actual, pero con:
+- ✅ Declaración de protección de datos
+- ✅ Sección de Judy Singer
+- ✅ Todo el contenido que ya revisamos
+
+---
+
+## 📁 ESTRUCTURA DE CARPETAS PROPUESTA:
+```
+manifiesto_claude/
+│
+├── index.html                      # ← Nuevo: Página de entrada
+├── manifiesto-completo.html        # ← Tu documento actual mejorado
+├── judy-singer.html                # ← Sección académica expandida
+├── protocolos.html                 # ← Protocolos éticos detallados
+├── comunidad.html                  # ← Cómo contribuir
+│
+├── css/
+│   └── estilo-consciente.css       # ← Diseño fractal simple
+│
+├── img/
+│   └── diagramas/                  # ← Visualizaciones (opcional)
+│
+├── data/
+│   └── manifiesto.json             # ← Tu JSON existente
+│
+└── README.md                       # ← Documentación GitHub
