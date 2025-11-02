@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMO: La Estela de la Memoria (ADN Cognitivo)</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0e27; /* Fondo Oscuro, Estrellado */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 15px;
+            box-shadow: 0 0 40px rgba(102, 126, 234, 0.5);
+            max-width: 90%;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #4ecdc4;
+            text-shadow: 0 0 10px rgba(78, 205, 196, 0.8);
+        }
+
+        .explicacion {
+            margin: 20px auto;
+            max-width: 500px;
+        }
+
+        .insight {
+            font-size: 1.2em;
+            font-style: italic;
+            color: #667eea;
+            margin: 20px 0;
+            border-top: 1px solid rgba(102, 126, 234, 0.3);
+            border-bottom: 1px solid rgba(102, 126, 234, 0.3);
+            padding: 10px 0;
+        }
+
+        /* Canvas para la hélice */
+        #helixCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        
+        /* Botón para regresar */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #e17055;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .back-button:hover {
+            background: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="helixCanvas"></canvas>
+    
+    <div class="container">
+        <h1>🧬 La Estela de la Memoria</h1>
+        
+        <div class="explicacion">
+            <p><strong>Estructura Estable en Movimiento.</strong></p>
+            <p>La estructura (ADN/Identidad) permanece, pero la estela (Memoria/Experiencia) se desvanece.</p>
+            <p class="insight">
+                "La memoria es la sombra del movimiento sobre una estructura estable."
+            </p>
+            <p>Nada se repite igual, pero la forma constante crea la ilusión de un "yo" permanente.</p>
+        </div>
+        <a href="index.html" class="back-button">← Volver al Manifiesto</a>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('helixCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Ajustar canvas al tamaño de ventana
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        // Parámetros de la hélice
+        let time = 0;
+        const particles = [];
+        const maxParticles = 200;
+        
+        // Colores de las bases (Adenina, Timina, Citosina, Guanina)
+        const colors = ['#e67e22', '#3498db', '#9b59b6', '#1abc9c'];
+        
+        class Particle {
+            constructor(x, y, color, alpha) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.alpha = alpha;
+                this.life = 1.0;
+            }
+            
+            update() {
+                this.life -= 0.005; // Desvanecimiento gradual
+                this.alpha = this.life * 0.8;
+            }
+            
+            draw() {
+                ctx.globalAlpha = this.alpha;
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+        
+        function drawHelix() {
+            // Limpiar canvas con desvanecimiento suave (genera la estela)
+            ctx.fillStyle = 'rgba(10, 14, 39, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = 150;
+            const helixHeight = 400;
+            const numPoints = 60;
+            
+            // Dibujar dos hélices (doble hélice)
+            for (let i = 0; i < numPoints; i++) {
+                const t = (i / numPoints) * Math.PI * 4 + time;
+                const y = (i / numPoints) * helixHeight - helixHeight / 2;
+                
+                // Hélice 1
+                const x1 = centerX + Math.cos(t) * radius;
+                const z1 = Math.sin(t) * radius;
+                const scale1 = (z1 + radius) / (radius * 2);
+                
+                // Hélice 2 (opuesta)
+                const x2 = centerX - Math.cos(t) * radius;
+                const z2 = -Math.sin(t) * radius;
+                const scale2 = (z2 + radius) / (radius * 2);
+                
+                // Color según posición (ciclo de bases)
+                const colorIndex = Math.floor((i / numPoints) * 4);
+                const color = colors[colorIndex % 4];
+                
+                // Crear partículas para la estela
+                if (i % 3 === 0) {
+                    particles.push(new Particle(x1, centerY + y, color, scale1));
+                    particles.push(new Particle(x2, centerY + y, color, scale2));
+                }
+                
+                // Dibujar puntos de la hélice actual
+                ctx.globalAlpha = scale1 * 0.9;
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.arc(x1, centerY + y, 5 * scale1, 0, Math.PI * 2);
+                ctx.fill();
+                
+                ctx.globalAlpha = scale2 * 0.9;
+                ctx.fillStyle = color;
+                ctx.beginPath();
+                ctx.arc(x2, centerY + y, 5 * scale2, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Líneas conectoras (puentes de hidrógeno)
+                if (i % 5 === 0) {
+                    ctx.globalAlpha = Math.min(scale1, scale2) * 0.3;
+                    ctx.strokeStyle = '#00cec9';
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.moveTo(x1, centerY + y);
+                    ctx.lineTo(x2, centerY + y);
+                    ctx.stroke();
+                }
+            }
+            
+            // Actualizar y dibujar partículas (estela)
+            particles.forEach((particle, index) => {
+                particle.update();
+                particle.draw();
+                
+                // Eliminar partículas muertas
+                if (particle.life <= 0) {
+                    particles.splice(index, 1);
+                }
+            });
+            
+            // Limitar número de partículas
+            while (particles.length > maxParticles) {
+                particles.shift();
+            }
+            
+            time += 0.01; // Velocidad de rotación
+            
+            requestAnimationFrame(drawHelix);
+        }
+        
+        // Iniciar animación
+        drawHelix();
+        
+        // Ajustar canvas al redimensionar ventana
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
