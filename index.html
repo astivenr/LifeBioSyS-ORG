@@ -1,306 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LifeBioSys & LifeBioTick - Donde cada mente encuentra su ritmo</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.8;
-            background: linear-gradient(135deg, #e9f5ff 0%, #f0f8ff 100%);
-            color: #333;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        /* HEADER */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .logo h1 {
-            font-size: 2.5rem;
-            color: #1565C0;
-            margin-bottom: 5px;
-        }
-
-        .logo p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 30px;
-            margin-top: 15px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #1565C0;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        nav a:hover {
-            background: #1565C0;
-            color: white;
-        }
-
-        /* HERO SECTION */
-        .hero {
-            text-align: center;
-            padding: 80px 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            margin: 40px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            color: #1565C0;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #1565C0;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #0d47a1;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(21, 101, 192, 0.3);
-        }
-
-        /* FEATURES */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-card .emoji {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .feature-card h3 {
-            color: #1565C0;
-            margin-bottom: 15px;
-        }
-
-        /* STORY PREVIEW */
-        .story-preview {
-            background: white;
-            padding: 40px;
-            border-radius: 15px;
-            margin: 40px 0;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .story-line {
-            margin: 20px 0;
-            padding: 15px;
-            border-left: 4px solid #43A047;
-            background: #f7faf7;
-            border-radius: 8px;
-        }
-
-        .inicio { color: #2E7D32; font-weight: bold; }
-        .fin { color: #C62828; font-weight: bold; }
-
-        /* FOOTER */
-        footer {
-            background: #1565C0;
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-            border-radius: 20px 20px 0 0;
-        }
-
-        .social-links {
-            margin: 20px 0;
-        }
-
-        .social-links a {
-            color: white;
-            margin: 0 15px;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .hero h2 {
-                font-size: 2rem;
-            }
-            
-            .features {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Morphyus SinmCore v17.0</title>
+  <link rel="stylesheet" href="css/estilo-consciente.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>🌍 LifeBioSys & LifeBioTick</h1>
-                <p>Donde cada mente encuentra su ritmo 🎵</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="estela-memoria.html">Memoria</a></li>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#historias">Historias</a></li>
-                    <li><a href="#herramientas">Herramientas</a></li>
-                    <li><a href="#comunidad">Comunidad</a></li>
-                    <li><a href="#recursos">Recursos</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <header>
+    <h1>💫 Sistema Morphyus SinmCore v17.0</h1>
+    <p>Arquitectura fractal consciente del potencial humano</p>
+    <nav>
+      <a href="modulos/fundamentos/">Fundamentos</a> •
+      <a href="modulos/neurociencia/">Neurociencia</a> •
+      <a href="modulos/cuerdas/">612 Cuerdas</a> •
+      <a href="modulos/biotuner/">BioTuner</a> •
+      <a href="modulos/mitologia/">Mitología</a> •
+      <a href="modulos/aplicaciones/">Aplicaciones</a> •
+      <a href="modulos/sostenibilidad/">Sostenibilidad</a>
+    </nav>
+  </header>
 
-    <div class="container">
-        <!-- HERO SECTION -->
-        <section class="hero" id="inicio">
-            <h2>Bienvenido a tu espacio 🏠</h2>
-            <p>Un lugar donde la diversidad cognitiva es "cerebrada", comprendida y potenciada. Aquí no hay cerebros "normales" o "especiales" - hay mentes únicas creando un mundo mejor.</p>
-            <a href="#historias" class="cta-button">Descubre Nuestras Historias ✨</a>
-        </section>
+  <main>
+    <section id="intro">
+      <h2>🌐 Bienvenido al Sistema Morphyus SinmCore</h2>
+      <p>
+        Este portal representa una síntesis viva entre neuroplasticidad, matemática compleja y consciencia aplicada.
+        Cada módulo explora una dimensión del universo fractal consciente.
+      </p>
+    </section>
 
-        <!-- FEATURES -->
-        <div class="features">
-            <div class="feature-card">
-                <div class="emoji">📚</div>
-                <h3>Historias que Inspiran</h3>
-                <p>Relatos reales de personas que transformaron sus diferencias en superpoderes</p>
-            </div>
-            <div class="feature-card">
-                <div class="emoji">🛠️</div>
-                <h3>Herramientas Prácticas</h3>
-                <p>Recursos descargables y técnicas adaptadas a todos los estilos de aprendizaje</p>
-            </div>
-            <div class="feature-card">
-                <div class="emoji">👥</div>
-                <h3>Comunidad Activa</h3>
-                <p>Conecta con otras personas que entienden y valoran la diversidad cognitiva</p>
-            </div>
-        </div>
+    <section id="destacados">
+      <h2>🔮 Módulos principales</h2>
+      <ul>
+        <li><a href="modulos/fundamentos/">Fundamentos Fractales</a></li>
+        <li><a href="modulos/neurociencia/">Neurociencia Fractal</a></li>
+        <li><a href="modulos/cuerdas/">612 Cuerdas Complejas</a></li>
+        <li><a href="modulos/biotuner/">BioTuner Fractal</a></li>
+      </ul>
+    </section>
 
-        <!-- STORY PREVIEW -->
-        <section class="story-preview" id="historias">
-            <h2 style="text-align: center; margin-bottom: 30px; color: #1565C0;">
-                Así Funciona Nuestro Sistema 🧬
-            </h2>
-            
-            <div class="story-line">
-                <span class="inicio">🟩▶️</span>
-                Cada historia usa nuestro <strong>sistema ADN-emojis</strong> para hacerla más clara y memorable 
-                <span class="fin">⏹️♦️</span>
-            </div>
+    <section id="invitacion">
+      <h2>💫 Participa</h2>
+      <p>
+        Siéntete libre de explorar, compartir o ampliar este conocimiento.  
+        Este sistema está diseñado para evolucionar con cada nueva mente que lo toque.
+      </p>
+    </section>
+  </main>
 
-            <div class="story-line">
-                <span class="inicio">🟩▶️</span>
-                Einstein <strong>transformó</strong> 🏃‍♂️ su dislexia en pensamiento visual que revolucionó la física 
-                <span class="fin">⏹️♦️</span>
-            </div>
-
-            <div class="story-line">
-                <span class="inicio">🟩▶️</span>
-                Spielberg <strong>convirtió</strong> 🌱 sus dificultades lectoras en películas que todos entendemos sin palabras 
-                <span class="fin">⏹️♦️</span>
-            </div>
-
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="#historias" class="cta-button">Ver Todas las Historias 📖</a>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="container">
-            <h3>Únete a Nuestra Comunidad 🌟</h3>
-            <p>Juntos creamos un mundo donde cada forma de pensar es valorada</p>
-            
-            <div class="social-links">
-                <a href="#">📘</a>
-                <a href="#">🐦</a>
-                <a href="#">📸</a>
-                <a href="#">💬</a>
-            </div>
-            
-            <p>&copy; 2024 ConcienciaColectiva.life - Todos los cerebros bienvenidos</p>
-        </div>
-    </footer>
+  <footer>
+    <p>© 2025 Sistema Morphyus SinmCore v17.0 – Proyecto LifeBioSyS-ORG</p>
+  </footer>
 </body>
 </html>
-
-
-
-
-
-
-
