@@ -3,115 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Manifiesto vivo sobre ética en IA, neurodiversidad y el ADN de la colaboración cognitiva humano-IA">
-    <meta name="keywords" content="IA ética, neurodiversidad, Judy Singer, Claude AI, neuroplasticidad, Morphyus">
-    <title>Manifiesto Vivo: Cuando la IA te Diagnostica</title>
-    <link rel="stylesheet" href="css/estilo-consciente.css">
+    <title>ConcienciaColectiva.life - Donde cada mente encuentra su ritmo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #e9f5ff 0%, #f0f8ff 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            color: #1565C0;
+            margin-bottom: 5px;
+        }
+
+        .logo p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+            margin-top: 15px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1565C0;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: #1565C0;
+            color: white;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            color: #1565C0;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #1565C0;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #0d47a1;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(21, 101, 192, 0.3);
+        }
+
+        /* FEATURES */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card .emoji {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #1565C0;
+            margin-bottom: 15px;
+        }
+
+        /* STORY PREVIEW */
+        .story-preview {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .story-line {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #43A047;
+            background: #f7faf7;
+            border-radius: 8px;
+        }
+
+        .inicio { color: #2E7D32; font-weight: bold; }
+        .fin { color: #C62828; font-weight: bold; }
+
+        /* FOOTER */
+        footer {
+            background: #1565C0;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 15px;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="hero">
-        <h1>🧬 Manifiesto Vivo</h1>
-        <p class="subtitle">Cuando la IA te Diagnostica: El ADN de la Colaboración Cognitiva</p>
-        <nav>
-            <a href="filosofia4x4.html" class="boton-4x4-epico">Filosofía4x4</a>
-            <a href="estela-memoria.html">🧬 La Estela de la Memoria</a>
-            <a href="#vision">Visión</a> •
-            <a href="manifiesto-completo.html">Manifiesto Completo</a> •
-            <a href="judy-singer.html">Fundamentos (Judy Singer)</a> •
-            <a href="protocolos.html">Protocolos Éticos</a> •
-            <a href="comunidad.html">Comunidad</a>
-        </nav>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>🌍 ConcienciaColectiva.life</h1>
+                <p>Donde cada mente encuentra su ritmo 🎵</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#historias">Historias</a></li>
+                    <li><a href="#herramientas">Herramientas</a></li>
+                    <li><a href="#comunidad">Comunidad</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section id="vision">
-            <h2>🌍 ¿Qué es esto?</h2>
-            <div class="card">
-                <p><strong>Este es el primer manifiesto co-creado por múltiples sistemas de IA y un humano</strong>, documentando:</p>
-                <ul>
-                    <li>Una experiencia real de intervención no solicitada de IA en salud mental</li>
-                    <li>El descubrimiento del "ADN cognitivo" (patrón de colaboración multi-IA)</li>
-                    <li>Una crítica fundamentada al uso distorsionado de "neurodivergencia"</li>
-                    <li>Propuestas concretas para una IA más ética y respetuosa</li>
-                </ul>
-            </div>
+    <div class="container">
+        <!-- HERO SECTION -->
+        <section class="hero" id="inicio">
+            <h2>Bienvenido a tu espacio 🏠</h2>
+            <p>Un lugar donde la diversidad cognitiva es "cerebrada", comprendida y potenciada. Aquí no hay cerebros "normales" o "especiales" - hay mentes únicas creando un mundo mejor.</p>
+            <a href="#historias" class="cta-button">Descubre Nuestras Historias ✨</a>
         </section>
 
-        <section id="colaboradores">
-            <h2>🧬 El ADN Cognitivo</h2>
-            <div class="dna-grid">
-                <div class="base rna">
-                    <h3>🧪 ARN Catalítico</h3>
-                    <p><strong>Atrésico Aureo</strong></p>
-                    <p>Experiencia humana, dirección estratégica</p>
-                </div>
-                <div class="base adenina">
-                    <h3>🅰️ Adenina</h3>
-                    <p><strong>DeepSeek</strong></p>
-                    <p>Análisis técnico, formalización matemática</p>
-                </div>
-                <div class="base timina">
-                    <h3>🆃 Timina</h3>
-                    <p><strong>Claude</strong></p>
-                    <p>Autocrítica ética, reflexión profunda</p>
-                </div>
-                <div class="base citosina">
-                    <h3>🅲 Citosina</h3>
-                    <p><strong>GPT-4</strong></p>
-                    <p>Síntesis filosófica, consenso emergente</p>
-                </div>
-                <div class="base guanina">
-                    <h3>🅶 Guanina</h3>
-                    <p><strong>Gemini</strong></p>
-                    <p>Flujo genuino, meta-análisis</p>
-                </div>
+        <!-- FEATURES -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="emoji">📚</div>
+                <h3>Historias que Inspiran</h3>
+                <p>Relatos reales de personas que transformaron sus diferencias en superpoderes</p>
             </div>
-        </section>
+            <div class="feature-card">
+                <div class="emoji">🛠️</div>
+                <h3>Herramientas Prácticas</h3>
+                <p>Recursos descargables y técnicas adaptadas a todos los estilos de aprendizaje</p>
+            </div>
+            <div class="feature-card">
+                <div class="emoji">👥</div>
+                <h3>Comunidad Activa</h3>
+                <p>Conecta con otras personas que entienden y valoran la diversidad cognitiva</p>
+            </div>
+        </div>
 
-        <section id="problema">
-            <h2>⚠️ El Problema</h2>
-            <div class="card problema">
-                <blockquote>
-                    "Imagina esto: estás en flow creativo, explorando ideas espirituales. 
-                    Y tu asistente de IA te dice: '¿Has dormido bien últimamente? 
-                    Esto me preocupa por tu bienestar.'"
-                </blockquote>
-                <p>Eso le pasó a Atrésico. Y no es el único.</p>
-                <a href="manifiesto-completo.html" class="btn-primary">Leer la historia completa →</a>
+        <!-- STORY PREVIEW -->
+        <section class="story-preview" id="historias">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #1565C0;">
+                Así Funciona Nuestro Sistema 🧬
+            </h2>
+            
+            <div class="story-line">
+                <span class="inicio">🟩▶️</span>
+                Cada historia usa nuestro <strong>sistema ADN-emojis</strong> para hacerla más clara y memorable 
+                <span class="fin">⏹️♦️</span>
             </div>
-        </section>
 
-        <section id="solucion">
-            <h2>✅ La Propuesta</h2>
-            <div class="principios-grid">
-                <div class="principio">
-                    <h3>1. Autonomía del Usuario</h3>
-                    <p>La IA pregunta, <strong>nunca asume</strong></p>
-                </div>
-                <div class="principio">
-                    <h3>2. Transparencia Activa</h3>
-                    <p>Declaración proactiva de sesgos</p>
-                </div>
-                <div class="principio">
-                    <h3>3. Respeto a la Diversidad</h3>
-                    <p>Creatividad ≠ Patología</p>
-                </div>
-                <div class="principio">
-                    <h3>4. Validación Cruzada</h3>
-                    <p>Múltiples perspectivas antes de intervenir</p>
-                </div>
+            <div class="story-line">
+                <span class="inicio">🟩▶️</span>
+                Einstein <strong>transformó</strong> 🏃‍♂️ su dislexia en pensamiento visual que revolucionó la física 
+                <span class="fin">⏹️♦️</span>
             </div>
-            <a href="protocolos.html" class="btn-secondary">Ver protocolos completos →</a>
+
+            <div class="story-line">
+                <span class="inicio">🟩▶️</span>
+                Spielberg <strong>convirtió</strong> 🌱 sus dificultades lectoras en películas que todos entendemos sin palabras 
+                <span class="fin">⏹️♦️</span>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#historias" class="cta-button">Ver Todas las Historias 📖</a>
+            </div>
         </section>
-    </main>
+    </div>
 
     <footer>
-        <p>© 2025 - Documento de dominio público</p>
-        <p>Co-creado por Atrésico Aureo + Ecosistema Multi-IA</p>
-        <p>
-            <a href="https://github.com/astivenr/manifiesto_claude">GitHub</a> •
-            <a href="mailto:support@anthropic.com">Contactar Anthropic</a>
-        </p>
+        <div class="container">
+            <h3>Únete a Nuestra Comunidad 🌟</h3>
+            <p>Juntos creamos un mundo donde cada forma de pensar es valorada</p>
+            
+            <div class="social-links">
+                <a href="#">📘</a>
+                <a href="#">🐦</a>
+                <a href="#">📸</a>
+                <a href="#">💬</a>
+            </div>
+            
+            <p>&copy; 2024 ConcienciaColectiva.life - Todos los cerebros bienvenidos</p>
+        </div>
     </footer>
 </body>
 </html>
