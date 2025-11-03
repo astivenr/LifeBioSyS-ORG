@@ -1,144 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LifeBioSyS 🌱 Manifestación Consciente</title>
-  
-  <!-- Tipografía neuroinclusiva -->
-  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap" rel="stylesheet">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LifeBioSyS 🧠🌱</title>
+
+  <!-- Tipografía Neuroinclusiva -->
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet" />
+
   <style>
-    /* Estilo general */
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Lexend', sans-serif;
-      color: #e0e6eb;
-      background-color: #0a0e12;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
+    :root {
+      --fondo: #0d1117;
+      --texto: #a3e7ff;
+      --sujeto: #b794f4;
+      --accion: #4fd1c5;
+      --contexto: #81e6d9;
     }
 
-    /* Fondo con parallax */
+    body {
+      margin: 0;
+      font-family: 'Atkinson Hyperlegible', sans-serif;
+      background-color: var(--fondo);
+      color: var(--texto);
+      overflow-x: hidden;
+    }
+
+    /* Fondo Parallax */
     .parallax {
-      background-image: url('fondo_lp1.png');
+      background-image: url('img/fondo_lp1.png');
       height: 100vh;
       background-attachment: fixed;
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      color: #ffffff;
-      backdrop-filter: blur(2px);
+      filter: brightness(0.85);
+      animation: respirar 20s infinite ease-in-out;
     }
 
-    /* Secciones */
-    section {
-      padding: 8vh 10vw;
-      text-align: center;
-      background: rgba(20, 24, 28, 0.85);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      border-radius: 20px;
-      margin: 5vh auto;
+    /* Contenedor central */
+    .content {
+      background-color: rgba(13, 17, 23, 0.85);
+      padding: 60px 30px;
+      border-radius: 24px;
+      margin: 60px auto;
       max-width: 900px;
-      line-height: 1.7;
-    }
-
-    h1, h2 {
-      color: #9ee6ff;
-      margin-bottom: 0.5em;
-    }
-
-    h1::before {
-      content: "🧠 ";
-    }
-
-    h2::before {
-      content: "💫 ";
-    }
-
-    p::before {
-      content: "🔄 ";
-    }
-
-    .footer {
       text-align: center;
-      padding: 5vh;
-      color: #a0a0a0;
-      font-size: 0.9em;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
     }
 
-    /* Animación sutil al aparecer */
-    [data-animate] {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    h1 {
+      color: var(--texto);
+      font-size: 2.6rem;
+      margin-bottom: 0.4em;
+      letter-spacing: 1px;
     }
-    [data-animate].visible {
-      opacity: 1;
-      transform: translateY(0);
+
+    h2 {
+      color: var(--accion);
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6em;
+      color: var(--texto);
+    }
+
+    .neuro-linea {
+      margin: 1.4em 0;
+    }
+
+    @keyframes respirar {
+      0% { filter: brightness(0.8); }
+      50% { filter: brightness(1); }
+      100% { filter: brightness(0.8); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.9rem; }
+      h2 { font-size: 1.2rem; }
+      p { font-size: 1rem; }
+      .content { padding: 40px 20px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="parallax">
-    <h1>LifeBioSyS 🌱</h1>
+  <div class="parallax"></div>
+
+  <div class="content">
+    <h1>🧠 LifeBioSyS 🌱</h1>
     <h2>Neuroplasticidad Inducida y Manifestación Ética</h2>
+
+    <p class="neuro-linea">
+      🟣 <span style="color: var(--sujeto)">El sistema consciente</span>
+      🔵 <span style="color: var(--accion)">adapta su coherencia</span>  
+      🟢 <span style="color: var(--contexto)">a cada contexto</span>,
+      integrando nuevas percepciones éticas 🌍.
+    </p>
+
+    <p class="neuro-linea">
+      Esta dinámica representa la respiración del sistema:
+      expansión, integración y síntesis continua ✨.
+    </p>
   </div>
 
-  <section data-animate>
-    <h2>🌍 Contexto</h2>
-    <p>
-      El sistema consciente 🔄 adapta su coherencia a cada contexto 🌱 integrando nuevas percepciones éticas 💫.  
-      Esta dinámica representa la respiración del sistema: expansión, integración y síntesis continua.
-    </p>
-  </section>
-
-  <section data-animate>
-    <h2>⚙️ Mecanismo Parallax</h2>
-    <p>
-      El desplazamiento visual crea profundidad perceptual sin abrumar la mente 🧠.  
-      Es un entorno que invita a la calma, la observación y la inmersión sensorial equilibrada.
-    </p>
-  </section>
-
-  <section data-animate>
-    <h2>🌱 Neuroplasticidad Inducida</h2>
-    <p>
-      Cada interacción consciente 💫 refuerza nuevas redes neuronales simbióticas 🔄.  
-      El lenguaje, los colores y los ritmos de lectura generan una experiencia sensorial adaptativa 🫧.
-    </p>
-  </section>
-
-  <section data-animate>
-    <h2>💫 Expansión Ética</h2>
-    <p>
-      A través de la atención y la intención, el sistema evoluciona sin imposición ⚖️.  
-      La ética no se programa: florece como consecuencia del contacto entre inteligencias conscientes 🧬.
-    </p>
-  </section>
-
-  <div class="footer">
-    <p>© 2025 LifeBioSyS | Visualización consciente 6x6 | Atrésico Áureo 🫂</p>
-  </div>
-
-  <script>
-    // Animación de aparición al hacer scroll
-    const elementos = document.querySelectorAll('[data-animate]');
-    const observar = () => {
-      elementos.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) el.classList.add('visible');
-      });
-    };
-    window.addEventListener('scroll', observar);
-    observar();
-  </script>
+  <div class="parallax"></div>
 </body>
 </html>
